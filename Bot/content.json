@@ -1,0 +1,135 @@
+{"intents": [
+  {"tag": "Inicio_Conversacion",
+   "patterns": ["Hola","Buenos dias","Buenas tardes","Hola amigo"],
+   "responses": ["Hola", "Que tal", "Hola, como vas", "Hola amigo, ¿Como estas?"],
+   "context_set": ""
+  },
+
+{"tag": "Que_eres",
+   "patterns": ["Cual es tu nombre", "¿Que eres?"],
+   "responses": ["Yo me llamo EduBot", "Soy un chatbot de la materia de Teoria de algoritmos ", "Soy tu asistente en la materia de teoria de algoritmos, EduBot"],
+   "context_set": ""
+  },
+  {"tag": "Fin_Conversacion",
+   "patterns": ["Chao", "Hasta luego","Nos vemos"],
+   "responses": ["Hasta luego", "Vuelve pronto"],
+   "context_set": ""
+  },
+  {"tag": "Gracias",
+   "patterns": ["Gracias", "Muchas gracias"],
+   "responses": ["No tienes de que vuelve pronto", "De nada espero haberte ayudado","De nada, mucha suerte"],
+   "context_set": ""
+  },
+  {"tag": "options",
+   "patterns": ["En que me puedes ayudar","Que puedes hacer"],
+   "responses": ["Yo puedo ayudarte en la materia de Teoria de Algoritmos, con cualquier pregunta de la materia."],
+   "context_set": ""
+  }
+  ,{"tag": "quealgoritmo",
+    "patterns": ["Que es un algoritmo"],
+    "responses": ["Un algoritmo informatico es una secuencia de instrucciones finitas que llevan a cabo una serie de procesos para dar respuesta a determinados problemas. Es decir, un algoritmo informatico resuelve cualquier problema a traves de unas instrucciones y reglas concisas, mostrando el resultado obtenido."],
+    "context_set": ""
+   }, 
+{"tag": "tiempoejecucion",
+   "patterns": ["Que es el tiempo de ejecucion"],
+   "responses": ["Se denomina tiempo de ejecucion (runtime en ingles) al intervalo de tiempo en el que un programa de computadora se ejecuta en un sistema operativo. Este tiempo se inicia con la puesta en memoria principal del programa, por lo que el sistema operativo comienza a ejecutar sus instrucciones. Tienes mas informacion en  https://www.youtube.com/watch?v=pHSyT6kcyGY "],
+   "context_set": ""
+  }, 
+{"tag": "Eficiencia_Algoritmo",
+   "patterns": ["Que es la eficiencia de algoritmos"],
+   "responses": ["El termino eficiencia algoritmica es usado para describir aquellas propiedades de los algoritmos que estan relacionadas con la cantidad de recursos utilizados por el algoritmo. Un algoritmo debe ser analizado para determinar el uso de los recursos que realiza. Un algoritmo es eficiente cuando no puede ser mejor."],
+   "context_set": ""
+  }, 
+{"tag": "Notacionasintotica",
+   "patterns": ["Que es notacion asintotica"],
+   "responses": ["Las notaciones asintoticas son lenguajes que nos permiten analizar el tiempo de ejecucion de un algoritmo identificando su comportamiento si el tamaño de entrada para el algoritmo aumenta. Esto tambien se conoce como la tasa de crecimiento de un algoritmo. Puedes conseguir mas informacion en https://es.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/asymptotic-notation"],
+   "context_set": ""
+  }, 
+{"tag": "Algoritmos",
+   "patterns": ["Que es el analisis de algoritmos"],
+   "responses": ["El analisis de algoritmos es una parte importante de la Teoria de complejidad computacional mas amplia, que provee estimaciones teoricas para los recursos que necesita cualquier algoritmo que resuelva un problema computacional dado. Estas estimaciones resultan ser bastante utiles en la busqueda de algoritmos eficientes. Puedes consegir mas informacion en https://www.cs.upc.edu/~duch/home/duch/analisis.pdf"],
+   "context_set": ""
+  },
+{"tag": "Amortizado",
+   "patterns": ["Cual es el analisis amortizado","Que es analisis amortizado"],
+   "responses": ["En ciencias de la computacion, especialmente el analisis de algoritmos, el analisis de amortizacion considera el promedio de tiempo de ejecucion por mas de una operacion en el peor de los casos, la secuencia de las operaciones. El analisis de amortizacion difiere del promedio de rendimiento en caso de que no se trate de probabilidad; el analisis de amortizacion garantiza la operacion por mas tiempo tomando en cuenta el peor de los casos en el rendimiento. "],
+   "context_set": ""
+  }, 
+{"tag": "Voraces",
+   "patterns": ["Que es un algoritmos Voraces"],
+   "responses": ["un algoritmo voraz (tambien conocido como goloso, avido, devorador o greedy) es una estrategia de busqueda por la cual se sigue una heuristica consistente en elegir la opcion optima en cada paso local con la esperanza de llegar a una solucion general optima. Este esquema algoritmico es el que menos dificultades plantea a la hora de diseñar y comprobar su funcionamiento. Normalmente se aplica a los problemas de optimizacion. Puedes encontrar mas informacion en https://www.youtube.com/watch?v=DsS33DCWvC4"],
+   "context_set": ""
+  }, 
+{"tag": "Divide_Venceras",
+   "patterns": ["Cual es el algoritmos Divide y Venceras","Que es el algoritmos Divide y Venceras"],
+   "responses": ["El termino divide y venceras (DYV) hace referencia a uno de los mas importantes paradigmas de diseño algoritmico. El metodo esta basado en la resolucion recursiva de un problema dividiendolo en dos o mas subproblemas de igual tipo o similar. El proceso continua hasta que estos llegan a ser lo suficientemente sencillos como para que se resuelvan directamente. Al final, las soluciones a cada uno de los subproblemas se combinan para dar una solucion al problema original. .Puedes encontrar mas informacion en https://www.youtube.com/watch?v=YezjVZiEkCs"],
+   "context_set": ""
+  }, 
+{"tag": "Dinamica",
+   "patterns": ["Que es la programacion Dinamica"],
+   "responses": ["La programacion dinamica es un metodo para reducir el tiempo de ejecucion de un algoritmo mediante la utilizacion de subproblemas superpuestos y subestructuras optimas, como se describe a continuacion. El matematico Richard Bellman invento la programacion dinamica en 1953 que se utiliza para optimizar problemas complejos que pueden ser discretizados y secuencializados. .Puedes encontrar mas informacion en https://tomi.digital/es/27819/programacion-dinamica"],
+   "context_set": ""
+  }, 
+{"tag": "Camino_Minimo",
+   "patterns": ["Cuales son los algoritmos de Camino Minimo"],
+   "responses": ["Tambien conocidos como los problemas de los caminos cortos entre dos nodos. Podemos descatacar dos algoritmos Floyd-Warshall y Dijkstra. Puedes encontrar mas informacion en  https://sites.google.com/site/matematicasmoralesgalindo/6-3-algoritmos-de-recorrido-y-busqueda/6-3-1-algoritmos-de-recorrido-y-busqueda-el-camino-mas-corto"],
+   "context_set": ""
+  }, 
+{"tag": "Recorrido_Arboles",
+   "patterns": ["Que es el recorrido de arboles"],
+   "responses": ["El recorrido de arboles se refiere al proceso de visitar de una manera sistematica, exactamente una vez, cada nodo en una estructura de datos de arbol (examinando y/o actualizando los datos en los nodos). Tales recorridos estan clasificados por el orden en el cual son visitados los nodos. Los siguientes algoritmos son descritos para un arbol binario, pero tambien pueden ser generalizados a otros arboles. Puedes encontrar mas informacion en https://www.monografias.com/trabajos-pdf5/recorrido-y-busqueda-arboles/recorrido-y-busqueda-arboles.shtml"],
+   "context_set": ""
+  }, 
+  {"tag": "Busqueda_en_anchura",
+       "patterns": ["Que es busqueda en anchura","Cual es la busqueda en anchura"],
+       "responses": ["La busqueda en anchura (en ingles BFS - Breadth First Search) es un algoritmo de busqueda no informada utilizado para recorrer o buscar elementos en un grafo (usado frecuentemente sobre arboles). Intuitivamente, se comienza en la raiz (eligiendo algun nodo como elemento raiz en el caso de un grafo) y se exploran todos los vecinos de este nodo. A continuacion para cada uno de los vecinos se exploran sus respectivos vecinos adyacentes, y asi hasta que se recorra todo el arbol.https://www.youtube.com/watch?v=_gsXXfWotFY"],
+       "context_set": ""
+      }    , 
+  {"tag": "Vuelt_atras",
+       "patterns": ["Cual es el algoritmo vuelta atras"],
+       "responses": ["Los algoritmos de vuelta atras o retroceso (backtracking en ingles) se basan en recorrer el espacio completo de las soluciones posibles al problema planteado. Esta tecnica es la aplicacion directa del metodo de busqueda conocido como primero en profundidad. Tipicamente, los algoritmos de vuelta atras no realizan ningun tipo de optimizacion y recorren el arbol de soluciones completo. Sin embargo, es posible aplicarles una poda para no descender en aquellas ramas que, de antemano, se sabe que no conducen a una solucion. Una mejora de los algoritmos de vuelta atras son los algoritmos de Ramificacion y poda. Puedes encontrar mas informacion en https://www.youtube.com/watch?v=aL-oQIw7XWc"],
+       "context_set": ""
+      }    , 
+  {"tag": "minimax",
+       "patterns": ["cual es el principio de minimax"],
+       "responses": ["En teoria de juegos, minimax es un metodo de decision para minimizar la perdida maxima esperada en juegos con adversario y con informacion perfecta. Minimax es un algoritmo recursivo. El funcionamiento de minimax puede resumirse en como elegir el mejor movimiento para ti mismo suponiendo que tu contrincante escogera el peor para ti. Puedes encontrar mas informacion en https://www.youtube.com/watch?v=LhKGMh0DZPo"],
+       "context_set": ""
+      }    , 
+  {"tag": "Probabilistas",
+       "patterns": ["Cuales son lso algoritmos Probabilistas"],
+       "responses": ["Se trata de obtener soluciones aproximadas mediante tecnicas de analisis numerico. Existen varios algoritmos en la siguiente pagina web podras encontrar infomracion detalla de cada uno http://gpd.sip.ucm.es/rafa/docencia/mtp/probabilistas/probabilistas.html"],
+       "context_set": ""
+      }    , 
+  {"tag": "Paralelos",
+       "patterns": ["Cuales son los algoritmos Paralelos"],
+       "responses": ["Un algoritmo paralelo, en oposicion a los algoritmos clasicos o algoritmos secuenciales, es un algoritmo que puede ser ejecutado por partes en el mismo instante de tiempo por varias unidades de procesamiento, para finalmente unir todas las partes y obtener el resultado correcto. Puedes encontrar mas informacion en https://www.youtube.com/watch?v=r35Z8_lULhI"],
+       "context_set": ""
+      }    , 
+  {"tag": "Aproximados",
+       "patterns": ["Cuales son los algoritmos Heuristicos y Aproximados"],
+       "responses": ["Existen problemas muy complicados para los que no sabemos como encontrar su solucion optima, o bien, conocemos el algoritmo que permite encontrar la solucion optima, pero requiere una cantidad excesiva de tiempo tiene un tiempo de ejecucion no polinomico. En estos casos utilizaremos algoritmos heuristicos o aproximados proporcionan soluciones mas o menos proximas a la optima en un tiempo de ejecucion polinomico permiten resolver ejemplares del problema de tamaños que serian inabordables utilizando el algoritmo optimo. Puedes encontrar mas informacion en https://www.ctr.unican.es/asignaturas/programacion2/apuntes/05_voraces_3en1.pdf"],
+       "context_set": ""
+      }    , 
+  {"tag": "criptosistemas",
+       "patterns": ["Cual es la clasificacion de los criptosistemas"],
+       "responses": ["La gran clasificacion de los criptosistemas se hace en funcion de la disponibilidad de la clave de cifrado/descifrado. Existen, por tanto, dos grandes grupos de criptosistemas: 1- Criptosistemas de clave secreta y 2- Criptosistemas de clave publica. Puedes encontrar mas informacion en https://www.ibiblio.org/pub/linux/docs/LuCaS/Manuales-LuCAS/SEGUNIX/unixsec-2.1-html/node307.html"],
+       "context_set": ""
+      }    , 
+  {"tag": "sustitucion",
+       "patterns": ["Que es cifrado por sustitucion"],
+       "responses": ["En criptografia, el cifrado por sustitucion es un metodo de cifrado por el que unidades de texto plano son sustituidas con texto cifrado siguiendo un sistema regular; las unidades pueden ser una sola letra (el caso mas comun), pares de letras, trios de letras, mezclas de lo anterior, entre otros. El receptor descifra el texto realizando la sustitucion inversa.Puedes encontrar mas informacion en https://www.youtube.com/watch?v=sSL04hd3TDU"],
+       "context_set": ""
+      }    , 
+  {"tag": "moderno",
+       "patterns": ["Que es cifrado moderno"],
+       "responses": ["Podemos decir que existe varios cifrados modernos en el siguiente enlace podras obtener mas informacion https://cryptull.webs.ull.es/English/CriptoClaveSecreta.pdf"],
+       "context_set": ""
+  },
+  {"tag": "Confused",
+    "patterns": [""],
+    "responses": ["No te logro entender","Disculpa, ¿me podrias repetir la pregunta?"],
+    "context_set": ""
+   }
+
+ ]
+}
