@@ -42,7 +42,7 @@ python manage.py runserver
 
 * Open your browser and put the following web address: http://localhost:8000/
 
-*Enjoy! (Stop the server with Ctrl + C in the command promt and train again the model for apply any changes on the contents.json file).
+* Enjoy! (Stop the server with Ctrl + C in the command promt and train again the model for apply any changes on the contents.json file).
 
 ## Technologies:
 
