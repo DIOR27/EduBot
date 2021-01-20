@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-32">
+    <title>EduBot | Chatbot educativo</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/css/common-page.css" %}">
+    <link rel="stylesheet" href="{% static "css/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/toastr.css" %}">
+    <script src="{% static "script/jquery-1.10.2.js" %}"></script>
+    <script src="{% static "script/bootstrap.min.js" %}"></script>
+    <script src="{% static "script/toastr.js" %}"></script>
+    <style>
+        @media (min-width: 401px) {
+            
+            .container{
+                width: 50%;
+            }
+        }
+        @media (max-width: 400px) {
+            
+            .container{
+                width: 100%;
+                margin-top: -50px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img src="http://meraktechnology.com/images/EduBotcontelefono.png" alt="EduBot" style="width: 15%;">
+            </div>
+            <div class="col-md-12 text-center">
+                <img src="https://archicadecuador.com/wp-content/uploads/2018/05/Logo-UDA.png" alt="EduBot" style="width: 20%;">
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row" style="margin-top: -60px;">
+            <div class="col-md-12">
+                <div class="row cnt">
+                    <div class="col-md-12">
+                        <h3><i class="fa fa-comments-o"></i>Bienvenido a EduBot</h3>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row" id="MessageContent">
+                        </div>
+                    </div>
+                    <div class="col-md12">
+                        <hr>
+                        <textarea class="form-control" style="width: 100%" rows="2"
+                                  placeholder="Ingresa tu consulta aquí" id="Message"></textarea>
+                        <button class="cus-btn-normal" id="Reply">Enviar</button>
+                    </div>
+                    <sub>Realizado por: Diego Orellana, Sebastián Medina.</sub>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    toastr.options.positionClass = 'toast-bottom-left';
+
+    var msgText = $('#Message');
+
+    $('#Reply').click(function () {
+
+        var msg = msgText.val()
+        msg = msg.replace("á","a")
+        msg = msg.replace("é","e")
+        msg = msg.replace("í","i")
+        msg = msg.replace("ó","o")
+        msg = msg.replace("ú","u")
+        if (msg == '') {
+            toastr.error("Hey amigo, debes ingresar una consulta.")
+            return;
+        }
+
+        var data = {
+            "msg": msg
+        }
+        $.ajax({
+            url: '/api',
+            data: JSON.stringify(data),
+            method: 'POST',
+            success: function (res) {
+                drawMessage(res)
+            },
+            error: function (err) {
+                if (err.desc == null)
+                    err.desc = "Algo ha salido mal... Estamos trabajando en ello."
+                toastr.error(err.desc)
+            }
+        })
+
+    })
+
+
+    var msgContent = $('#MessageContent');
+
+    function drawMessage(res) {
+        msgContent.append("<div class='col-md-6 owner-message'><p>"+res.ques+"</p><p class='time'></p></div>");
+        msgContent.append("<div class='col-md-6 guest-message'><p>"+linkify(res.res)+"</p><p class='time'></p></div>")
+        msgText.val('')
+    }
+
+    function linkify(inputText) {
+        var replacedText, replacePattern1, replacePattern2, replacePattern3;
+
+        //URLs starting with http://, https://, or ftp://
+        replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
+        replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>');
+
+        //URLs starting with "www." (without // before it, or it'd re-link the ones done above).
+        replacePattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
+        replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2" target="_blank">$2</a>');
+
+        //Change email addresses to mailto:: links.
+        replacePattern3 = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
+        replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$1">$1</a>');
+        
+        replacedText = replacedText.replace("Â¿", '¿');
+        replacedText = replacedText.replace("Â¿", '¿');
+        replacedText = replacedText.replace("í¿", '¿');
+        replacedText = replacedText.replace("í¿", '¿');
+        replacedText = replacedText.replace("Ã¡", 'á');
+        replacedText = replacedText.replace("Ã¡", 'á');
+        replacedText = replacedText.replace("í¡", 'á');
+        replacedText = replacedText.replace("í¡", 'á');
+        replacedText = replacedText.replace("Ã©", 'é');
+        replacedText = replacedText.replace("Ã©", 'é');
+        replacedText = replacedText.replace("í©", 'é');
+        replacedText = replacedText.replace("í©", 'é');
+        replacedText = replacedText.replace("Ã³", 'ó');
+        replacedText = replacedText.replace("Ã³", 'ó');
+        replacedText = replacedText.replace("í³", 'ó');
+        replacedText = replacedText.replace("í³", 'ó');
+        replacedText = replacedText.replace("íº", 'ú');
+        replacedText = replacedText.replace("íº", 'ú');
+        replacedText = replacedText.replace("Ãº", 'ú');
+        replacedText = replacedText.replace("Ãº", 'ú');
+        replacedText = replacedText.replace("Ã", 'í');
+        replacedText = replacedText.replace("Ã", 'í');
+        replacedText = replacedText.replace("Ã", 'í');
+        replacedText = replacedText.replace("í", 'í');
+        replacedText = replacedText.replace("í", 'í');
+
+        return replacedText;
+    }
+
+</script>
+
+</body>
+</html>
