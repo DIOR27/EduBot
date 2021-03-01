@@ -1,7 +1,7 @@
+nltk
 contextlib2
 numpy==1.19.3
 tensorflow
 django
 tflearn
-nltk
 bot
